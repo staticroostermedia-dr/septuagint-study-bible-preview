@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Septuagint Study Bible</title>
+<meta name="description" content="Read the Greek Septuagint (Rahlfs 1935) — tap any word for meaning, grammar, forms, two English translations and New Testament links.">
+<meta name="theme-color" content="#fbf8f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Septuagint">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="style.css">
+<link rel="preload" href="fonts/GentiumPlus-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem('lxx-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<header class="top">
+  <button id="menuBtn" class="iconbtn" aria-label="Books" title="Books">☰</button>
+  <a href="#/" class="brand">Septuagint<span> Study Bible</span></a>
+  <div class="nav">
+    <button id="prevBtn" class="iconbtn" aria-label="Previous chapter" title="Previous chapter">‹</button>
+    <button id="locBtn" class="loc" aria-label="Choose chapter"></button>
+    <button id="nextBtn" class="iconbtn" aria-label="Next chapter" title="Next chapter">›</button>
+  </div>
+  <div class="tools">
+    <button id="searchBtn" class="iconbtn" aria-label="Search lemma" title="Search by lemma or English">⌕</button>
+    <button id="enBtn" class="iconbtn txt" aria-label="Toggle English" title="Show/hide Brenton English">EN</button>
+    <button id="themeBtn" class="iconbtn" aria-label="Toggle dark mode" title="Dark / light">◐</button>
+    <button id="sizeBtn" class="iconbtn txt" aria-label="Text size" title="Text size">Aa</button>
+  </div>
+</header>
+
+<aside id="books" class="drawer" hidden>
+  <div class="drawer-head"><strong>Books</strong><button class="iconbtn close" data-close="books" aria-label="Close">✕</button></div>
+  <div id="bookList"></div>
+  <div id="offline" class="offline" hidden>
+    <div class="offh"><strong>Offline &amp; app</strong></div>
+    <p class="small" id="offStat">Chapters you read are saved for offline reading automatically.</p>
+    <div class="offbar" hidden><div id="offProg"></div></div>
+    <p class="small" id="offMsg" aria-live="polite"></p><p class="small" id="offUse"></p>
+    <div class="offbtns"><button id="offDl" class="obtn">Download everything for offline use</button><button id="offClr" class="obtn ghost">Remove offline data</button><button id="instBtn" class="obtn" hidden>Install app</button></div>
+  </div>
+  <p class="small"><a href="#/about">About, sources &amp; licenses</a></p>
+</aside>
+
+<main id="main" tabindex="-1"><p class="loading">Loading…</p></main>
+
+<section id="panel" class="panel" hidden aria-live="polite">
+  <div class="panel-grip"></div>
+  <div class="pbar"><div class="ptools"><button class="iconbtn" id="pSmaller" aria-label="Smaller panel text" title="Smaller text">A−</button><button class="iconbtn" id="pLarger" aria-label="Larger panel text" title="Larger text">A+</button></div>
+  <button class="iconbtn close" id="panelClose" aria-label="Close">✕</button></div>
+  <div id="panelBody"></div>
+</section>
+<div id="scrim" hidden></div>
+<script src="app.js"></script>
+<div id="toast" class="toast" hidden></div>
+</body>
+</html>
